@@ -1,11 +1,13 @@
 <template>
     <div id="tab">
-        <div class="tab-item">首页</div>
-        <div class="tab-item">首页</div>
-        <div class="tab-item">首页</div>
-        <div class="tab-item">首页</div>
+        <slot></slot>
     </div>
 </template>
+<script>
+export default {
+    name:'tab'
+}
+</script>
 <style scoped>
 #tab{
     display: flex;
@@ -16,12 +18,5 @@
     bottom: 0;
     box-shadow: 0px -3px 1px rgb(238, 213, 194,0.7);
 }
-.tab-item{
-    flex: 1;
-    height: 49px;
-    text-align: center;
-    line-height: 49px;
-    color: palevioletred;
-    font-size: 16px;
-}
+
 </style>

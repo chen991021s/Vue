@@ -1,5 +1,8 @@
 <template>
-    <div class="tab-item">首页</div>
+    <div class="tab-item">
+        <slot name="item_img"></slot>
+        <slot name="item_text"><slot>
+    </div>
 </template>
 <script>
 export default {

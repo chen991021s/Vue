@@ -2,12 +2,25 @@
   <div id="app">
     <tab>
       <tabitem>
-        <img src="./assets/img/tab/home.png" alt="" slot="item_img">
-        <p>首页</p>
+        <img src="./assets/img/tab/home.png" alt="" slot="item-img">
+         <img src="./assets/img/tab/home1.png" alt="" slot="item-img">
+        <p slot="item-text">首页</p>
       </tabitem>
-      <tabitem></tabitem>
-      <tabitem></tabitem>
-      <tabitem></tabitem>
+      <tabitem>
+        <img src="./assets/img/tab/fen.png" alt="" slot="item-img">
+         <img src="./assets/img/tab/fen1.png" alt="" slot="item-img">
+        <p slot="item-text">分类</p>
+      </tabitem>
+      <tabitem>
+        <img src="./assets/img/tab/car.png" alt="" slot="item-img">
+         <img src="./assets/img/tab/car1.png" alt="" slot="item-img">
+        <p slot="item-text">购物车</p>
+      </tabitem>
+      <tabitem>
+        <img src="./assets/img/tab/my.png" alt="" slot="item-img">
+         <img src="./assets/img/tab/my1.png" alt="" slot="item-img">
+        <p slot="item-text">我的</p>
+      </tabitem>
     </tab>
   </div>
 </template>

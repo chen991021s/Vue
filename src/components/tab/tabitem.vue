@@ -1,7 +1,8 @@
 <template>
+<!-- 一个个小的组件 -->
     <div class="tab-item">
-        <slot name="item_img"></slot>
-        <slot name="item_text"><slot>
+        <slot name="item-img"></slot>
+        <slot name="item-text"></slot>
     </div>
 </template>
 <script>
@@ -14,8 +15,13 @@ export default {
     flex: 1;
     height: 49px;
     text-align: center;
-    line-height: 49px;
     color: palevioletred;
-    font-size: 16px;
+    font-size: 14px;
+}
+img{
+    width: 25px;
+    height: 25px;
+    margin-top:3px;
+    vertical-align: middle;
 }
 </style>

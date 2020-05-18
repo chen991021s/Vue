@@ -1,5 +1,6 @@
 <template>
     <div id="tab">
+        <!-- 最下面整个大的组件 -->
         <slot></slot>
     </div>
 </template>
@@ -11,7 +12,7 @@ export default {
 <style scoped>
 #tab{
     display: flex;
-    background-color: rgb(238, 213, 194);
+    background-color: rgb(238, 223, 212);
     position: fixed;
     left: 0;
     right: 0;

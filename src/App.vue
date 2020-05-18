@@ -3,39 +3,16 @@
     <keep-alive>
       <router-view></router-view>
     </keep-alive>   
-    <tab>
-      <tabitem path='/Home'>
-        <img src="./assets/img/tab/home.png" alt="" slot="item-img">
-         <img src="./assets/img/tab/home1.png" alt="" slot="item-img-active">
-        <p slot="item-text">首页</p>
-      </tabitem>
-      <tabitem path='/Fen'>
-        <img src="./assets/img/tab/fen.png" alt="" slot="item-img">
-         <img src="./assets/img/tab/fen1.png" alt="" slot="item-img-active">
-        <p slot="item-text">分类</p>
-      </tabitem>
-      <tabitem path='/Car'>
-        <img src="./assets/img/tab/car.png" alt="" slot="item-img">
-         <img src="./assets/img/tab/car1.png" alt="" slot="item-img-active">
-        <p slot="item-text">购物车</p>
-      </tabitem>
-      <tabitem path='/My'>
-        <img src="./assets/img/tab/my.png" alt="" slot="item-img">
-         <img src="./assets/img/tab/my1.png" alt="" slot="item-img-active">
-        <p slot="item-text">我的</p>
-      </tabitem>
-    </tab>
+    <mianapptab></mianapptab>
   </div>
 </template>
 
 <script>
-import tab from './components/tab/tab.vue'
-import tabitem from './components/tab/tabitem.vue'
+import mianapptab from './components/mianapptab.vue'
 export default {
   name:'app',
   components:{
-    tab,
-    tabitem
+    mianapptab
   }
 }
 </script>

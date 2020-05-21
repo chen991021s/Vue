@@ -1,7 +1,7 @@
 <template>
-    <div>
+    <div class="homeswiper">
         <swiper>
-        <swiper-item v-for='item in banners' :key="item.image">
+        <swiper-item v-for='(item,index) in banners' :key="index">
             <a :href="item.link">
                 <img :src="item.image" alt="">
             </a>
@@ -29,5 +29,8 @@ export default {
 }
 </script>
 <style scoped>
-
+.homeswiper{
+    margin-top: 1px;
+    margin-top: 44px;
+}
 </style>

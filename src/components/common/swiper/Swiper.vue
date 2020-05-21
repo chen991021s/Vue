@@ -1,5 +1,6 @@
 <template>
     <div id="hy-swiper">
+      <!-- touchstart touchmove 拖动事件-->
       <div class="swiper" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">
         <slot></slot>
       </div>
@@ -17,18 +18,22 @@
 	export default {
 		name: "Swiper",
     props: {
+      //轮播时间
       interval: {
 		    type: Number,
         default: 3000
       },
+      //延迟轮播
       animDuration: {
 		    type: Number,
         default: 300
       },
+      //滑动的比例
       moveRatio: {
         type: Number,
         default: 0.25
       },
+      //是否显示下面的小图标
       showIndicator: {
         type: Boolean,
         default: true
@@ -45,24 +50,26 @@
     },
     mounted: function () {
       // 1.操作DOM, 在前后添加Slide
+      //设置定时器 setTimeout只执行一次
       setTimeout(() => {
         this.handleDom();
 
         // 2.开启定时器
         this.startTimer();
-      }, 100)
+      }, 300)
     },
     methods: {
 		  /**
        * 定时器操作
+       * setInterval触发后一直执行
        */
-      startTimer: function () {
+      startTimer: function () { //开始定时器
 		    this.playTimer = window.setInterval(() => {
-		      this.currentIndex++;
-		      this.scrollContent(-this.currentIndex * this.totalWidth);
+		      this.currentIndex++; //当前index++
+		      this.scrollContent(-this.currentIndex * this.totalWidth); //滑动的距离
         }, this.interval)
       },
-      stopTimer: function () {
+      stopTimer: function () { //停止定时器
         window.clearInterval(this.playTimer);
       },
 
@@ -74,7 +81,7 @@
         this.scrolling = true;
 
         // 1.开始滚动动画
-        this.swiperStyle.transition ='transform '+ this.animDuration + 'ms';
+        this.swiperStyle.transition ='transform '+ this.animDuration + 'ms';//延迟轮播时间
         this.setTransform(currentPosition);
 
         // 2.判断滚动到的位置

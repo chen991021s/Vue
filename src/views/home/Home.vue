@@ -2,20 +2,28 @@
     <div id="home">
         <navtab class="nav_tab"><div slot="content">购物街</div></navtab>
         <homebanner :banners="banners"/>
-        <homerecommend :recommends="recommends"></homerecommend>
+        <homerecommend :recommends="recommends" />
+        <feature />
+        <deature :title="['流行','新款','精选']"></deature>
     </div> 
 </template>
 <script>
 import navtab from 'components/common/navtab/navtab'
+import deature from 'components/content/tabContor/tabcontor'
+
 import homebanner from './childrenhome/homeswiper'
 import homerecommend from './childrenhome/homerecommend'
+import feature from './childrenhome/feature'
+
 import {GetHomeMutliData} from 'network/home.js'
 export default {
     name:'Home',
     components:{
         navtab,
+        deature,
         homebanner,
-        homerecommend
+        homerecommend,
+        feature
     },
     data(){
         return{
@@ -48,5 +56,10 @@ export default {
  .nav_tab{
     background-color: var(--color-tint);
     color: white;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    right: 0;
+    top: 0;
  }
 </style>

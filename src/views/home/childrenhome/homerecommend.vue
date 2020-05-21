@@ -23,7 +23,8 @@ export default {
     text-align: center;
     font-size: 13px;
     margin-top: 4px;
-    margin-bottom: 20px;
+    padding-bottom: 20px;
+    box-shadow: 0px 5px 5px rgba(150,150,150,.08);
 }
 .recommends-item{
     flex: 1;

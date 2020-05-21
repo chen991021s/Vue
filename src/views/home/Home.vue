@@ -2,19 +2,11 @@
     <div id="home">
         <navtab class="nav_tab"><div slot="content">购物街</div></navtab>
         <homeswiper :banners='banners' class="swiper"></homeswiper>
-        <!-- <swiper>
-            <swiper-item v-for='item in banners' :key="item.title">
-                <a :href="item.link">
-                    <img :src="item.image" alt="">
-                </a>
-            </swiper-item>
-        </swiper> -->
         <homerecommend :recommends="recommends"></homerecommend>
     </div> 
 </template>
 <script>
 import navtab from 'components/common/navtab/navtab'
-// import { Swiper, SwiperItem } from 'components/common/swiper'
 import homeswiper from './childrenhome/homeswiper'
 import homerecommend from './childrenhome/homerecommend'
 import {GetHomeMutliData} from 'network/home.js'

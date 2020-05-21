@@ -8,8 +8,8 @@
 </template>
 
 <script>
-// @指向src文件夹 在webpack中被定义了
-import mianapptab from '@/components/mianapptab.vue'
+// @指向src文件夹 在vue.config.js中被定别名
+import mianapptab from 'components/content/maintab/mianapptab.vue'
 export default {
   name:'app',
   components:{
@@ -18,6 +18,6 @@ export default {
 }
 </script>
 <style>
-@import "./assets/css/app.css";
+@import "assets/css/app.css";
 
 </style>

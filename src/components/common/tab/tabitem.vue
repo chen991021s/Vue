@@ -26,7 +26,7 @@ export default {
         isactive:{
             get(){
                 //当前选中的路由是否包含我传入的路由 当不等于-1就包含
-                return this.$route.path.indexOf(this.path) !== -1
+                return this.$route.path.indexOf(this.path) !== -1  //返回布尔值
             },
             set(){}
             
@@ -41,7 +41,7 @@ export default {
         actives(){
             this.isactive= !this.isactive
             this.$router.push(this.path)
-            console.log('ss')
+            // console.log('ss')
         }
     }
 }

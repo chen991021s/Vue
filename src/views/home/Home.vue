@@ -3,18 +3,18 @@
         <navtab class="nav_tab">
             <div slot="content">购物街</div>
         </navtab>
-        <swiper :banners="banners"></swiper>
+        <homeswiper :banners="banners"></homeswiper>
     </div> 
 </template>
 <script>
 import navtab from 'components/common/navtab/navtab'
-import  swiper from './childrenhome/swiper'
+import  homeswiper from './childrenhome/swiper'
 import {GetHomeMutliData} from 'network/home.js'
 export default {
     name:'Home',
     components:{
         navtab,
-        swiper
+        homeswiper
     },
     data(){
         return{

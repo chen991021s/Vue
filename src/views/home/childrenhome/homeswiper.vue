@@ -14,9 +14,10 @@ import { Swiper, SwiperItem } from 'components/common/swiper'
 export default {
     name:'homeswiper',
     props:{
-        banners:{
-            type:Array
-        }
+        banners: {
+        type: Array,
+        required: true
+      }
     },
     components:{
         Swiper,

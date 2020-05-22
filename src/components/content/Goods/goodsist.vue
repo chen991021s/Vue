@@ -1,4 +1,5 @@
 <template>
+<!-- 流行，精选，新款 整体组件 -->
     <div class="goods" >
         <goodsitem v-for="(item,index) in goods" :key='index' :goodsitem="item"/>
     </div>

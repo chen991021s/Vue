@@ -1,4 +1,5 @@
 <template>
+<!-- 流行，新款 ，精选切换组件 -->
     <div class="tabcontor">
         <div v-for="(item,index) in title" :key='index' 
         class="tabcontor-item" :class="{active:index ===curusindex}" @click="tabcontor(index)">

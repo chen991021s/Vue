@@ -1,4 +1,5 @@
 <template>
+<!-- 封装头部 -->
     <div class='navtab'>
         <!-- 使用div包裹住slot ,因为slot最终会被组件中的内容替换掉 -->
         <div class="left"><slot name="left"></slot></div>

@@ -1,4 +1,5 @@
 <template>
+<!-- 封装轮播 -->
     <div id="hy-swiper">
       <!-- touchstart touchmove 拖动事件-->
       <div class="swiper" @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd">

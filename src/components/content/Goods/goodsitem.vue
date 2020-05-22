@@ -1,4 +1,5 @@
 <template>
+ <!-- 流行，精选，新款 整体小组件 -->
     <div class="goods-item">
         <img :src="goodsitem.data.icon" alt="">
         <div class="goods-info ">

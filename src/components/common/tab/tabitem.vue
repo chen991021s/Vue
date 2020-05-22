@@ -1,5 +1,5 @@
 <template>
-<!-- 一个个小的组件 -->
+<!-- 一个个小的组件封装 -->
     <div class="tab-item" @click="actives">
         <div v-if="!isactive"><slot name="item-img"></slot></div>
         <div v-else><slot name="item-img-active"></slot></div>
@@ -52,12 +52,13 @@ export default {
     height: 49px;
     text-align: center;
     color: palevioletred;
-    font-size: 14px;
+    font-size: 12px;
 }
 img{
-    width: 25px;
+    width: 22px;
     height: 25px;
     margin-top:3px;
     vertical-align: middle;
+    padding-bottom:4px;
 }
 </style>

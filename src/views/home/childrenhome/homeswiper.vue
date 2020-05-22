@@ -1,4 +1,5 @@
 <template>
+<!-- 轮播 -->
     <div class="homeswiper">
         <swiper>
         <swiper-item v-for='(item,index) in banners' :key="index">

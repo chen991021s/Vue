@@ -1,4 +1,5 @@
 <template>
+<!-- 使用最下面组件 -->
      <tab>
       <tabitem path='/Home'>
         <img src="~assets/img/tab/home.png" alt="" slot="item-img">

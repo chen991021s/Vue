@@ -1,4 +1,5 @@
 <template>
+<!-- 封装轮播小组件 -->
     <div class="slide">
       <slot></slot>
     </div>

@@ -20,7 +20,6 @@ export default {
     bottom: 0;
     box-shadow: 0px -3px 3px #ffffff;
     z-index:1000;
-    height: 50px;
 }
 
 </style>

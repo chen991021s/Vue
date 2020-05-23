@@ -105,6 +105,7 @@ export default {
             //一到底部就调用GetHomeGoods方法，发送网络请求
             // 当前的类型等于data中的数据，data数据类型根据
             // this.GetHomeGoods(this.curtape)
+            this.$refs.bscroll.scroll.refresh() //刷新
         },
         /**
          * 网络请求事件
@@ -177,7 +178,7 @@ export default {
  }
  /* .contenthight{
      margin-top: 44px;
-     height: calc(100% - 93px); //计算高度
-     overflow: hidden;
+     height: calc(100% - 93px); /**计算高度*/
+     /* overflow: hidden;
  } */
 </style>

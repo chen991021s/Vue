@@ -18,3 +18,12 @@ export function GetHomeGoods(){
         })
     })
 }
+
+export function GetdetailData(iid){
+    return request({
+        url:'/detail',
+        params:{
+            iid
+        }
+    })
+}

@@ -5,7 +5,7 @@ const Home = ()=>import('../views/home/Home.vue')
 const Car = ()=>import('../views/car/Car.vue')
 const Fen = ()=>import('../views/fen/Fen.vue')
 const My = ()=>import('../views/my/My.vue')
-const Xian = () =>import('../views/xiangqin/Xian.vue')
+const Detail = () =>import('../views/xiangqin/Detail.vue')
 
 Vue.use(VueRouter)
 
@@ -51,9 +51,9 @@ Vue.use(VueRouter)
       }
     },
     {
-      path:'/xian/:id',
-      name:'xian',
-      component:Xian,
+      path:'/detail/:id',
+      name:'detail',
+      component:Detail,
       beforeEnter:(to,from,next) =>{
         document.title ='详情页'
         next()

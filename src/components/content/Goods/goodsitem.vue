@@ -27,7 +27,7 @@ export default {
       },
 
       itemclick(){
-         this.$router.push('/xian/'+this.goodsitem.data.id) //保存新记录（可以前进后退）
+         this.$router.push('/detail/'+this.goodsitem.data.id) //保存新记录（可以前进后退）
       }
 
 

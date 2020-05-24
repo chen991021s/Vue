@@ -44,6 +44,7 @@ export default {
         }
     },
     mounted(){
+        //滚动效果 （在移动端滚动更加流畅,滚到两端有弹簧效果）
         //创建BScroll实例
         this.scroll = new BSscroll(this.$refs.wrapper,{
             probeType:this.probetype, //侦测 0，1侦测不到实时位置，2没有侦测惯性位置，3可以侦测滑动的惯性位置

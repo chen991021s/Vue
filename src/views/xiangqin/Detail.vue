@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div id='detail'>
         <chuldrennavtab></chuldrennavtab>
         <xianswiper :banners="banners"></xianswiper>
     </div>
@@ -46,5 +46,10 @@ export default {
 }
 </script>
 <style scoped>
-
+#detail{
+    height: 100vh;
+    position: relative;
+    z-index: 10000;
+    background-color: #ffffff;
+}
 </style>

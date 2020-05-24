@@ -1,11 +1,11 @@
 <template>
  <!-- 流行，精选，新款 整体小组件 -->
-    <div class="goods-item">
-        <img :src="goodsitem.data.icon" alt="">
+    <div class="goods-item" @click = "itemclick">
+        <img :src="goodsitem.data.icon" alt="" @load="loadimg">
         <div class="goods-info ">
              <p>{{goodsitem.data.description}}</p>
              <span class="collect">{{goodsitem.data.id}}</span>
-        </div>   
+        </div>
     </div>
 </template>
 <script>
@@ -18,6 +18,19 @@ export default {
                 return{}
             }
         }
+    },
+    methods:{
+      loadimg(){
+        this.$bus.$emit('itemloadimg')
+        // this.$store.commit('add')
+        // console.log(this.$store.state.mag)
+      },
+
+      itemclick(){
+         this.$router.push('/xian/'+this.goodsitem.data.id) //保存新记录（可以前进后退）
+      }
+
+
     }
 }
 </script>

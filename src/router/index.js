@@ -5,6 +5,7 @@ const Home = ()=>import('../views/home/Home.vue')
 const Car = ()=>import('../views/car/Car.vue')
 const Fen = ()=>import('../views/fen/Fen.vue')
 const My = ()=>import('../views/my/My.vue')
+const Xian = () =>import('../views/xiangqin/Xian.vue')
 
 Vue.use(VueRouter)
 
@@ -17,32 +18,45 @@ Vue.use(VueRouter)
       path:'/Home',
       name:'home',
       component:Home,
-      meta:{
-        title:'淘淘街'
+      beforeEnter:(to,from,next) =>{
+        document.title ='淘淘街'
+        next()
       }
     },
     {
       path:'/fen',
       name:'fen',
       component:Fen,
-      meta:{
-        title:'分类'
-      },
+      beforeEnter:(to,from,next) =>{
+        document.title ='分类'
+        next()
+      }
     },
     {
       path:'/car',
       name:'car',
       component:Car,
-      meta:{
-        title:'购物车'
+      beforeEnter:(to,from,next) =>{
+        document.title ='购物车'
+        next()
       }
     },
     {
       path:'/my',
       name:'my',
       component:My,
-      meta:{
-        title:'个人中心'
+      beforeEnter:(to,from,next) =>{
+        document.title ='个人中心'
+        next()
+      }
+    },
+    {
+      path:'/xian/:id',
+      name:'xian',
+      component:Xian,
+      beforeEnter:(to,from,next) =>{
+        document.title ='详情页'
+        next()
       }
     }
   
@@ -54,14 +68,14 @@ const router = new VueRouter({
   routes
 })
 
-router.beforeEach((to,from,next) =>{
-  //从from跳到to (从离开的路由跳转到去的路由)
-  document.title = to.matched[0].meta.title
-  next()
-})
-//后置钩子
-//跳转后回调
-router.afterEach((to,from) =>{})
+// router.beforeEach((to,from,next) =>{
+//   //从from跳到to (从离开的路由跳转到去的路由)
+//   // document.title = to.matched[0].meta.title
+//   next()
+// })
+// //后置钩子
+// //跳转后回调
+// router.afterEach((to,from) =>{})
 
 
 export default router

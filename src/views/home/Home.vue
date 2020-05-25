@@ -143,6 +143,7 @@ export default {
         scroll(position){
             this.isshow = -position.y >1000
             // console.log(position.y)
+            // 监听轮播图片加载完成，获取tabcontor到顶部的高度this.tabtop = this.$refs.tabcontor.$el.offsetTop
             this.isfixed = (-position.y) > this.tabtop+44
             // console.log(this.isfixed)
         },

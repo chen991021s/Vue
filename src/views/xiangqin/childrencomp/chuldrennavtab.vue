@@ -31,6 +31,7 @@ export default {
     methods:{
         itemclick(index){
             this.curindex = index
+            this.$emit('itemclick',index)
         },
         imgclick(){
             this.$router.go(-1)

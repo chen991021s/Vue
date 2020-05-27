@@ -192,7 +192,8 @@ export default {
             .then( res =>{
                 // console.log(res.data.result)
                 //将请求的数据添加到goods数据中
-                this.goods.list.push(...res.data.result.itemList) 
+                console.log(res.data.showapi_res_body.pagebean.contentlist)
+                this.goods.list.push(...res.data.showapi_res_body.pagebean.contentlist) 
             })
         }
         // GetHomeGoods(type){

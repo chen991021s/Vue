@@ -1,10 +1,11 @@
 <template>
  <!-- 流行，精选，新款 整体小组件 -->
     <div class="goods-item" @click = "itemclick">
-        <img :src="goodsitem.data.icon" alt="" @load="loadimg">
+      <!-- v-lazy图片懒加载 -->
+        <img v-lazy="goodsitem.profile_image" alt="" @load="loadimg">
         <div class="goods-info ">
-             <p>{{goodsitem.data.description}}</p>
-             <span class="collect">{{goodsitem.data.id}}</span>
+             <p>{{goodsitem.text}}</p>
+             <span class="collect">{{goodsitem.id}}</span>
         </div>
     </div>
 </template>
@@ -27,7 +28,7 @@ export default {
       },
 
       itemclick(){
-         this.$router.push('/detail/'+this.goodsitem.data.id) //保存新记录（可以前进后退）
+         this.$router.push('/detail/'+this.goodsitem.id) //保存新记录（可以前进后退）
       }
 
 

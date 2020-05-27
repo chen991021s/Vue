@@ -10,7 +10,7 @@ export function GetHomeMutliData(){
 export function GetHomeGoods(){
     return new Promise( (reslove,reject) =>{
         axios({
-            url:'https://api.apiopen.top/videoCategory',          
+            url:'https://route.showapi.com/255-1?showapi_appid=125485&&showapi_sign=4bc66e4f7a2943779bee9a704cef4c20'          
         }).then( res =>{
             reslove(res)
         },err =>{

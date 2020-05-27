@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import mutations from './mutations'
+import getters from './getters'
+import actions from './actions'
 
 //安装插件
 Vue.use(Vuex)
@@ -12,23 +15,9 @@ const store = new Vuex.Store({
         catlist:[]
 
     },
-    mutations:{
-        add(state){
-            state.mag+1
-        },
-        addcart(state,playLoad){
-            let lodProduct = null
-            lodProduct = state.catlist.find(item =>{item.id == playLoad.id})
-            
-            if (lodProduct) {
-                lodProduct.count +=1
-            } else {
-                playLoad.count=1
-                state.catlist.push(playLoad)
-                // console.log(playLoad)
-            }
-        }
-    }
+    mutations,
+    getters,
+    actions
 })
 
 export default store

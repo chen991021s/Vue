@@ -1,13 +1,13 @@
 <template>
     <div id="catbottomlist">
         <div class="bottom-content">
-        <checkbuttom :ischeck="this.$store.state.catlist.check" class="check-bottom"/>
+        <checkbuttom :ischeck="checks" class="check-bottom" @click.native="clickcheck"/>
         <span>全选</span>
         </div>
         <div class="plice">
             合计：{{toplice}}
         </div>
-        <div class="right">
+        <div class="right" @click='sumclick'>
             去计算:{{this.$store.state.catlist.length}}
         </div>
     </div>
@@ -20,13 +20,41 @@ export default {
        checkbuttom
     },
     computed:{
+        //计算商品总价格
         toplice(){
             return '￥' + this.$store.state.catlist.filter(item =>{
                 return item.check
             }).reduce((rest,n)=>{
                 return rest+ n.pilce* n.count
-            },0).toFixed(2)
-            
+            },0).toFixed(2) 
+        },
+        
+        //全选
+        checks(){
+            //在数组中过滤出check=false 数组的长度，长度取反,为0就是true(全选按钮显示选中),否则就是false
+            return !(this.$store.state.catlist.filter(item => !item.check).length)
+        }
+    },
+    methods:{
+        clickcheck(){
+            if(this.checks){
+                //遍历循环catlist，改变check的值
+                this.$store.state.catlist.forEach(item => {
+                    item.check = false
+                })
+            }else{
+                this.$store.state.catlist.forEach(item => {
+                    item.check = true
+                })
+            }
+        },
+        //结算提醒
+        sumclick(){
+            if(this.$store.state.catlist.length>0 && this.checks){
+                this.$toast.shows('购买成功')
+            }else{
+                this.$toast.shows('请选择商品再购买')
+            }
         }
     }
     

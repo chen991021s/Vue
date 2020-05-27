@@ -11,17 +11,21 @@
         </bscroll>
         <backtop @click.native="backtop" v-show='isshow'/>
         <navbottom @addtocart="addtocart"/>
+        <!-- <toast :msgess="msgess" :show="show"/> -->
     </div>
 </template>
 <script>
 import bscroll from 'components/common/scroll/scroll'
 import backtop from 'components/common/backtop/backtop'
+import toast from 'components/common/toast/toast'
 
 import chuldrennavtab from './childrencomp/chuldrennavtab.vue'
 import xianswiper from './childrencomp/xianswiper.vue'
 import navbottom from './childrencomp/navbottom.vue'
 
 import {GetdetailData} from 'network/home.js'
+
+import {mapActions} from 'vuex'
 export default {
     name:'detail',
     data(){
@@ -31,7 +35,9 @@ export default {
             scrollY:[],
             getscrollY:null,
             curindex:0,
-            isshow:false
+            isshow:false,
+            msgess:'',
+            show:false
         }
     },
     components:{
@@ -39,7 +45,8 @@ export default {
         xianswiper,
         bscroll,
         backtop,
-        navbottom
+        navbottom,
+        toast
     },
     created(){
        this.id = this.$route.params.id
@@ -98,16 +105,38 @@ export default {
             // console.log(index)
             this.$refs.bscroll.scrollto(0,-this.scrollY[index],100)
         },
+        //映射出store中actions的方法
+        ...mapActions(['addcart']),
+        // ...mapActions({
+        //     add:addcart 
+        // }),
+
         //添加到购物车
         addtocart(){
-            console.log('cat')
+            // console.log('cat')
             let cats = {}
             cats.title='商品'
             cats.pilce=300,
             cats.count=0
             cats.id = [0,1,2,3]
             cats.check=true
-            this.$store.commit('addcart',cats)
+            
+            this.addcart(cats).then( res =>{
+                this.$toast.shows(res)
+                // console.log(this.$toast)
+                // this.show = true
+                // this.msgess = res
+
+                // setTimeout(() => {
+                //     this.show = false
+                //     this.msgess = ""
+                // }, 2000);
+                // console.log(res)
+            })
+            // this.$store.dispatch('addcart',cats)
+            // .then( res =>{
+            //     console.log(res)
+            // })
         }
 
         /**
